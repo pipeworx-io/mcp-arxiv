@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-arxiv",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "arXiv MCP — preprint server search (free, no auth)",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-e2da490cdbd199381748a78c91c6df628192cbf99dba4c45c29718f64803aae1",
-    "sourceCommit": "60f04b68c347e970c6be94a53439d1364061fc06"
+    "sourceHash": "v1-a17cbdd425f94a7fcd58ac7876faae444afa456588f1e6043c4f8bc3b0b8e1d2",
+    "sourceCommit": "454041882179fae560c06e770b6b7a2f33970015"
   }
 }
