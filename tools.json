@@ -1,0 +1,55 @@
+[
+  {
+    "name": "search_papers",
+    "description": "Search arXiv preprints. Plain text searches all fields; use prefixes for targeted queries: au:hinton (author), ti:transformer (title), abs:diffusion (abstract), cat:cs.AI (category), all:quantum (any field). Combine with AND/OR/ANDNOT, e.g., \"ti:transformer AND cat:cs.LG\". Returns id, title, authors, abstract, categories, published date, PDF URL.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Query string. Plain text or field-prefixed (au:, ti:, abs:, cat:, all:). Combine terms with AND, OR, ANDNOT."
+        },
+        "max_results": {
+          "type": "number",
+          "description": "Maximum papers to return (1-100, default 10)"
+        },
+        "sort_by": {
+          "type": "string",
+          "description": "relevance | lastUpdatedDate | submittedDate (default relevance)",
+          "enum": [
+            "relevance",
+            "lastUpdatedDate",
+            "submittedDate"
+          ]
+        },
+        "sort_order": {
+          "type": "string",
+          "description": "ascending | descending (default descending)",
+          "enum": [
+            "ascending",
+            "descending"
+          ]
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "get_paper",
+    "description": "Fetch a single arXiv paper by its ID (e.g., \"2310.06825\", \"2310.06825v2\", or legacy \"cs.CL/0301001\"). Returns full metadata: title, authors, abstract, categories, DOI (if linked), PDF URL.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "arxiv_id": {
+          "type": "string",
+          "description": "arXiv identifier (with or without version suffix)"
+        }
+      },
+      "required": [
+        "arxiv_id"
+      ]
+    }
+  }
+]
